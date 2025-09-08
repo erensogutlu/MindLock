@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="tr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>MindLock - Güvenlik Doğrulama Sistemi</title>
+		<link rel="stylesheet" href="style.css" />
+		<link rel="icon" href="icon.svg" />
+	</head>
+	<body>
+		<!-- yükleme animasyonu -->
+		<div id="yukleyiciKonteyner" class="yukleyici-konteyner">
+			<div class="yukleyici"></div>
+		</div>
+
+		<div id="mindlockKonteyner" class="mindlock-konteyner">
+			<div class="logo">ML</div>
+			<h1 class="başlık">MindLock</h1>
+			<h4>
+				<a href="https://github.com/erensogutlu" target="_blank"
+					>GitHub - erensogutlu</a
+				>
+			</h4>
+
+			<!-- ilerleme çubuğu -->
+			<div class="ilerleme-konteyner">
+				<div
+					id="ilerlemeCubuğu"
+					class="ilerleme-çubuğu"
+					style="width: 0%"
+				></div>
+			</div>
+
+			<!-- 1. aşama: görsel eşleştirme -->
+			<div id="görselTest" class="test-aşama aktif">
+				<div class="test-başlık">
+					<span id="görselDurum" class="durum-ikonu aktif">1</span>
+					Görsel Doğrulama - Aynı renkteki şekillere tıklayın
+				</div>
+				<canvas
+					id="görselCanvas"
+					class="görsel-canvas"
+					width="400"
+					height="200"
+					aria-label="Görsel doğrulama canvas'ı"
+				></canvas>
+				<div class="zaman-sayacı">
+					Kalan süre: <span id="görselZaman">30</span> saniye
+				</div>
+				<div class="buton-grup">
+					<button id="görselYenile" class="mindlock-buton ikincil">
+						Yenile
+					</button>
+					<button id="görselDevam" class="mindlock-buton birincil" disabled>
+						Devam
+					</button>
+				</div>
+			</div>
+
+			<!-- 2. aşama: matematik test -->
+			<div id="matematikTest" class="test-aşama">
+				<div class="test-başlık">
+					<span id="matematikDurum" class="durum-ikonu">2</span>
+					Matematik Doğrulama
+				</div>
+				<div id="matematikSoru" class="matematik-soru"></div>
+				<input
+					type="number"
+					id="matematikCevap"
+					class="cevap-giriş"
+					placeholder="Cevabınızı girin"
+					aria-label="Matematik cevabı"
+				/>
+				<div class="zaman-sayacı">
+					Kalan süre: <span id="matematikZaman">20</span> saniye
+				</div>
+				<div class="buton-grup">
+					<button id="matematikYenile" class="mindlock-buton ikincil">
+						Yenile
+					</button>
+					<button id="matematikDevam" class="mindlock-buton birincil" disabled>
+						Devam
+					</button>
+				</div>
+			</div>
+
+			<!-- 3. aşama: dinamik test -->
+			<div id="dinamikTest" class="test-aşama">
+				<div class="test-başlık">
+					<span id="dinamikDurum" class="durum-ikonu">3</span>
+					Dinamik Güvenlik Testi
+				</div>
+				<div id="dinamikİçerik"></div>
+				<div class="zaman-sayacı">
+					Kalan süre: <span id="dinamikZaman">25</span> saniye
+				</div>
+				<div class="buton-grup">
+					<button id="dinamikYenile" class="mindlock-buton ikincil">
+						Yenile
+					</button>
+					<button id="dinamikTamamla" class="mindlock-buton birincil" disabled>
+						Tamamla
+					</button>
+				</div>
+			</div>
+
+			<!-- sonuç alanı -->
+			<div id="sonuçAlanı"></div>
+		</div>
+
+		<script src="script.js"></script>
+	</body>
+</html>

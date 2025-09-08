@@ -1,0 +1,292 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+}
+
+/* loader animasyonu */
+.yukleyici-konteyner {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.9);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 9999;
+	transition: opacity 0.5s ease;
+}
+
+.yukleyici {
+	width: 60px;
+	height: 60px;
+	border: 3px solid #f3f3f3;
+	border-top: 3px solid #667eea;
+	border-radius: 50%;
+	animation: dönme 1s linear infinite;
+}
+
+@keyframes dönme {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.mindlock-konteyner {
+	background: white;
+	border-radius: 20px;
+	padding: 30px;
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+	max-width: 500px;
+	width: 100%;
+	opacity: 0;
+	transform: translateY(20px);
+	transition: all 0.5s ease;
+}
+
+.mindlock-konteyner.göster {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.mindlock-konteyner h4 {
+	text-align: center;
+}
+
+.mindlock-konteyner a {
+	text-decoration: none;
+}
+
+.başlık {
+	text-align: center;
+	color: #333;
+	margin-bottom: 25px;
+	font-size: 24px;
+	font-weight: 600;
+}
+
+.logo {
+	width: 40px;
+	height: 40px;
+	margin: 0 auto 15px;
+	background: linear-gradient(45deg, #667eea, #764ba2);
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.test-aşama {
+	margin-bottom: 20px;
+	padding: 20px;
+	border: 2px solid #e0e0e0;
+	border-radius: 12px;
+	transition: all 0.3s ease;
+}
+
+.test-aşama.aktif {
+	border-color: #667eea;
+	background: #f8f9ff;
+}
+
+.test-aşama.tamamlandı {
+	border-color: #4caf50;
+	background: #f0fff4;
+}
+
+.test-başlık {
+	font-weight: 600;
+	margin-bottom: 15px;
+	color: #333;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.durum-ikonu {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: #ddd;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 12px;
+}
+
+.durum-ikonu.aktif {
+	background: #667eea;
+	color: white;
+}
+
+.durum-ikonu.tamamlandı {
+	background: #4caf50;
+	color: white;
+}
+
+/* canvas görsel test */
+.görsel-canvas {
+	border: 2px solid #ddd;
+	border-radius: 8px;
+	cursor: crosshair;
+	display: block;
+	margin: 0 auto 15px;
+	max-width: 100%;
+}
+
+/* matematik test */
+.matematik-soru {
+	font-size: 20px;
+	text-align: center;
+	margin: 15px 0;
+	padding: 15px;
+	background: #f5f5f5;
+	border-radius: 8px;
+	font-weight: 600;
+}
+
+.cevap-giriş {
+	width: 100%;
+	padding: 12px;
+	border: 2px solid #ddd;
+	border-radius: 8px;
+	font-size: 16px;
+	text-align: center;
+	transition: border-color 0.3s ease;
+}
+
+.cevap-giriş:focus {
+	outline: none;
+	border-color: #667eea;
+}
+
+/* zaman sayacı */
+.zaman-sayacı {
+	text-align: center;
+	font-size: 18px;
+	font-weight: 600;
+	color: #ff6b6b;
+	margin: 10px 0;
+}
+
+/* butonlar */
+.buton-grup {
+	display: flex;
+	gap: 10px;
+	margin-top: 15px;
+}
+
+.mindlock-buton {
+	flex: 1;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 8px;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.mindlock-buton.birincil {
+	background: #667eea;
+	color: white;
+}
+
+.mindlock-buton.birincil:hover {
+	background: #5a6fd8;
+}
+
+.mindlock-buton.ikincil {
+	background: #f0f0f0;
+	color: #333;
+}
+
+.mindlock-buton.ikincil:hover {
+	background: #e0e0e0;
+}
+
+.mindlock-buton:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+/* sonuç mesajları */
+.sonuç-mesaj {
+	padding: 15px;
+	border-radius: 8px;
+	text-align: center;
+	font-weight: 600;
+	margin-top: 15px;
+}
+
+.sonuç-mesaj.başarılı {
+	background: #d4edda;
+	color: #155724;
+	border: 1px solid #c3e6cb;
+}
+
+.sonuç-mesaj.başarısız {
+	background: #f8d7da;
+	color: #721c24;
+	border: 1px solid #f5c6cb;
+}
+
+/* ilerleme çubuğu */
+.ilerleme-konteyner {
+	width: 100%;
+	height: 6px;
+	background: #e0e0e0;
+	border-radius: 3px;
+	margin: 20px 0;
+	overflow: hidden;
+}
+
+.ilerleme-çubuğu {
+	height: 100%;
+	background: linear-gradient(45deg, #667eea, #764ba2);
+	border-radius: 3px;
+	transition: width 0.5s ease;
+}
+
+/* responsive tasarım */
+@media (max-width: 480px) {
+	.mindlock-konteyner {
+		padding: 20px;
+		margin: 10px;
+	}
+
+	.görsel-canvas {
+		width: 100%;
+		height: 200px;
+	}
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
